@@ -35,7 +35,7 @@ export class UserService implements IUserModel {
             const user: any = await this.baseRepo.getOne(email, password);
             if (user) {
                 // Generate an access token
-                const accessToken = jwt.sign({ email: user.email, role: user.role }, process.env.SECRET_KEY, { expiresIn: '1h' });
+                const accessToken = jwt.sign({ email: user.email, name: user.name, city: user.city }, process.env.SECRET_KEY, { expiresIn: '1h' });
 
                 return ({
                     accessToken

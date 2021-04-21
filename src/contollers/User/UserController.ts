@@ -26,18 +26,18 @@ class UserController {
     }
 
     public getUserToken = async ({ params, headers, body }: any) => {
-        const { email, password } = params;
-        logger("User Controller - get User ::::", JSON.stringify(params))
+        const { email, password } = body;
+        logger("User Controller - get User ::::", JSON.stringify(body))
         console.log(email, password)
         return await userService.getUserToken(email, password);
 
     }
-    public getAllUsers = async ({ params, headers, body }: any) => {
-        const { email, password } = params;
-        logger("User Controller - getAllUsers ::::", JSON.stringify(params))
-        return await userService.getAllUsers();
+    // public getAllUsers = async ({ params, headers, body }: any) => {
+    //     const { email, password } = params;
+    //     logger("User Controller - getAllUsers ::::", JSON.stringify(params))
+    //     return await userService.getAllUsers();
 
-    }
+    // }
 
 }
 

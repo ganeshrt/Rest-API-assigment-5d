@@ -9,6 +9,6 @@ import { upload } from '../../lib/handleMulter';
 const router = Router();
 router.post('/', authJWt, upload.single('productImage'), checkSchema(validation.user.post as any), controllerAdapter(userController, "createUser"))
 
-router.get('/login/:username/:password', checkSchema(validation.user.get as any), controllerAdapter(userController, "getUserToken"))
-router.get('/', authJWt, checkSchema(validation.user.get as any), controllerAdapter(userController, "getAllUsers"))
+router.post('/login', checkSchema(validation.user.get as any), controllerAdapter(userController, "getUserToken"))
+// router.get('/', authJWt, checkSchema(validation.user.get as any), controllerAdapter(userController, "getAllUsers"))
 export default router;
