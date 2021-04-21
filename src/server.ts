@@ -19,7 +19,7 @@ export class Server {
         this.initJsonParser();
         this.app.use(cors());
         this.app.use((req, res, next) => {
-            res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200');
+            res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
 
             // Request methods you wish to allow
             res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');

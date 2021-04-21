@@ -1,12 +1,12 @@
 export default Object.freeze({
     user: {
         post: {
-            username: {
+            email: {
                 in: ["body"],
-                errorMessage: "username is empty",
+                errorMessage: "email is empty",
                 isRequired: true,
                 custom: {
-                    options: (username: String) => (username.length && username !== "" && typeof username === "string")
+                    options: (email: String) => (email.length && email !== "" && typeof email === "string")
                 }
             },
             password: {
@@ -32,12 +32,12 @@ export default Object.freeze({
             }
         },
         get: {
-            username: {
+            email: {
                 in: ["body"],
-                errorMessage: "username is empty",
+                errorMessage: "email is empty",
                 optional: false,
                 custom: {
-                    options: (username: String) => (username.length && username !== "" && typeof username === "string"),
+                    options: (email: String) => (email.length && email !== "" && typeof email === "string"),
                     errorMessage: "username is bad format",
                 }
             },
